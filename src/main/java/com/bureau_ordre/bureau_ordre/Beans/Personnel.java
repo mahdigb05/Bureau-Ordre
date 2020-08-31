@@ -1,0 +1,30 @@
+package com.bureau_ordre.bureau_ordre.Beans;
+
+import com.sun.istack.NotNull;
+
+import javax.persistence.*;
+
+@Entity
+public class Personnel extends Personne{
+
+    @OneToOne
+    @NotNull
+    private Departement departement;
+
+
+    public Personnel(String nom, String prenom, String tel, String email, long matricule, Departement departement) {
+        super(nom, prenom, tel, email, matricule);
+        this.departement = departement;
+    }
+
+    public Personnel() {
+    }
+
+    public Departement getDepartement() {
+        return departement;
+    }
+
+    public void setDepartement(Departement departement) {
+        this.departement = departement;
+    }
+}
