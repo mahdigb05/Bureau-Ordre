@@ -9,12 +9,16 @@ import javax.persistence.*;
 public class Personne {
 
     @NotNull
+    @Column(nullable = false)
     private String nom;
     @NotNull
+    @Column(nullable = false)
     private String prenom;
     @NotNull
+    @Column(nullable = false)
     private String tel;
     @NotNull
+    @Column(nullable = false)
     private String email;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

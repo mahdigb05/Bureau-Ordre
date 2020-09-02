@@ -9,6 +9,7 @@ public class Personnel extends Personne{
 
     @OneToOne
     @NotNull
+    @JoinColumn(nullable = false)
     private Departement departement;
 
 

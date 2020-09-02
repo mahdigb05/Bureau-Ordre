@@ -2,10 +2,7 @@ package com.bureau_ordre.bureau_ordre.Beans;
 
 import com.sun.istack.NotNull;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Etablissement {
@@ -14,10 +11,13 @@ public class Etablissement {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long numeroEtablissement;
     @NotNull
+    @Column(nullable = false)
     private String nomEtablissement;
     @NotNull
+    @Column(nullable = false)
     private String adresseEtablissement;
     @NotNull
+    @Column(nullable = false)
     private String telEtablissement;
 
     public Etablissement() {

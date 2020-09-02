@@ -2,10 +2,7 @@ package com.bureau_ordre.bureau_ordre.Beans;
 
 import com.sun.istack.NotNull;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.MappedSuperclass;
+import javax.persistence.*;
 import java.util.Date;
 
 @MappedSuperclass
@@ -15,23 +12,21 @@ public class Courrier {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long numeroCourrier;
     @NotNull
+    @Column(nullable = false)
     private String methodeEnvoi;
-    private Date dateEnvoi;
-    private Date dateReception;
     @NotNull
+    @Column(nullable = false)
     private String objet;
     @NotNull
+    @Column(nullable = false)
     private String natureCourrier;
-
 
     public Courrier() {
     }
 
-    public Courrier(long numeroCourrier, String methodeEnvoi, Date dateEnvoi, Date dateReception, String objet, String natureCourrier) {
+    public Courrier(long numeroCourrier, String methodeEnvoi, String objet, String natureCourrier) {
         this.numeroCourrier = numeroCourrier;
         this.methodeEnvoi = methodeEnvoi;
-        this.dateEnvoi = dateEnvoi;
-        this.dateReception = dateReception;
         this.objet = objet;
         this.natureCourrier = natureCourrier;
     }
@@ -52,21 +47,7 @@ public class Courrier {
         this.methodeEnvoi = methodeEnvoi;
     }
 
-    public Date getDateEnvoi() {
-        return dateEnvoi;
-    }
 
-    public void setDateEnvoi(Date dateEnvoi) {
-        this.dateEnvoi = dateEnvoi;
-    }
-
-    public Date getDateReception() {
-        return dateReception;
-    }
-
-    public void setDateReception(Date dateReception) {
-        this.dateReception = dateReception;
-    }
 
     public String getObjet() {
         return objet;

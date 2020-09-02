@@ -1,5 +1,7 @@
 package com.bureau_ordre.bureau_ordre.Beans;
 
+import com.sun.istack.NotNull;
+
 import javax.persistence.*;
 
 @Entity
@@ -9,6 +11,8 @@ public class Departement {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long numeroDepartement;
+    @Column(nullable = false)
+    @NotNull
     private String nomDepartement;
 
     public Departement() {

@@ -9,8 +9,10 @@ import javax.persistence.*;
 public class Utilisateur extends Personne {
 
     @NonNull
+    @Column(nullable = false)
     private Role role;
     @NotNull
+    @Column(nullable = false)
     private String password;
     @Column(columnDefinition =" tinyint(1) default 1")
     private boolean active;
