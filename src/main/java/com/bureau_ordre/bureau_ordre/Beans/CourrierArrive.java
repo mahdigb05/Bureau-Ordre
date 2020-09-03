@@ -26,8 +26,8 @@ public class CourrierArrive extends Courrier {
     public CourrierArrive() {
     }
 
-    public CourrierArrive(long numeroCourrier, String methodeEnvoi, String objet, String natureCourrier, Date dateEnvoi, Date dateReception, Personnel recepteur, Etablissement emetteur) {
-        super(numeroCourrier, methodeEnvoi, objet, natureCourrier);
+    public CourrierArrive(long numeroCourrier, String methodeEnvoi, String objet, String natureCourrier, TYPE_COURRIER type, Date dateEnvoi, Date dateReception, Personnel recepteur, Etablissement emetteur) {
+        super(numeroCourrier, methodeEnvoi, objet, natureCourrier, type);
         this.dateEnvoi = dateEnvoi;
         this.dateReception = dateReception;
         this.recepteur = recepteur;

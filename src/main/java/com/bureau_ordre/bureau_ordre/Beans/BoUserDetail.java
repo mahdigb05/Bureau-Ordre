@@ -1,10 +1,11 @@
 package com.bureau_ordre.bureau_ordre.Beans;
 
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Collections;
 
 public class BoUserDetail implements UserDetails {
 
@@ -16,7 +17,11 @@ public class BoUserDetail implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return Collections.emptyList();
+
+        SimpleGrantedAuthority authority = new SimpleGrantedAuthority(utilisateur.getRole().toString());
+        ArrayList<SimpleGrantedAuthority> authorities = new ArrayList<>();
+        authorities.add(authority);
+        return authorities;
     }
 
     @Override

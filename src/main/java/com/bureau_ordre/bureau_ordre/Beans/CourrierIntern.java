@@ -27,8 +27,8 @@ public class CourrierIntern extends Courrier{
     public CourrierIntern() {}
 
 
-    public CourrierIntern(long numeroCourrier, String methodeEnvoi, String objet, String natureCourrier, Date dateEnvoi, Date dateReception, Personnel recepteur, Personnel emetteur) {
-        super(numeroCourrier, methodeEnvoi, objet, natureCourrier);
+    public CourrierIntern(long numeroCourrier, String methodeEnvoi, String objet, String natureCourrier, TYPE_COURRIER type, Date dateEnvoi, Date dateReception, Personnel recepteur, Personnel emetteur) {
+        super(numeroCourrier, methodeEnvoi, objet, natureCourrier, type);
         this.dateEnvoi = dateEnvoi;
         this.dateReception = dateReception;
         this.recepteur = recepteur;

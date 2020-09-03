@@ -10,6 +10,7 @@ public class Utilisateur extends Personne {
 
     @NonNull
     @Column(nullable = false)
+    @Enumerated(EnumType.STRING)
     private Role role;
     @NotNull
     @Column(nullable = false)

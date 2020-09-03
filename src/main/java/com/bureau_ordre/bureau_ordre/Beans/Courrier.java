@@ -20,15 +20,29 @@ public class Courrier {
     @NotNull
     @Column(nullable = false)
     private String natureCourrier;
+    @NotNull
+    @Column(nullable = false)
+    @Enumerated(EnumType.STRING)
+    private TYPE_COURRIER type;
+
 
     public Courrier() {
     }
 
-    public Courrier(long numeroCourrier, String methodeEnvoi, String objet, String natureCourrier) {
+    public Courrier(long numeroCourrier, String methodeEnvoi, String objet, String natureCourrier, TYPE_COURRIER type) {
         this.numeroCourrier = numeroCourrier;
         this.methodeEnvoi = methodeEnvoi;
         this.objet = objet;
         this.natureCourrier = natureCourrier;
+        this.type = type;
+    }
+
+    public TYPE_COURRIER getType() {
+        return type;
+    }
+
+    public void setType(TYPE_COURRIER type) {
+        this.type = type;
     }
 
     public long getNumeroCourrier() {
@@ -46,8 +60,6 @@ public class Courrier {
     public void setMethodeEnvoi(String methodeEnvoi) {
         this.methodeEnvoi = methodeEnvoi;
     }
-
-
 
     public String getObjet() {
         return objet;
